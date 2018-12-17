@@ -17,7 +17,8 @@ def LEDHandler():
 			display.clear()
 			draw.line((1, 1, 6, 6), fill=(0, 255, 0))
 			draw.line((1, 6, 6, 1), fill=(0, 255, 0))
-		else if(flag):
+
+		elif(flag):
 			display.clear()
 			draw.rectangle((0, 0, 7, 7), outline=(255, 0, 0), fill=(255, 255, 0))
 		time.sleep(1)
@@ -53,5 +54,5 @@ except KeyboardInterrupt:
 	print 'shutdown'
 	global shutdown
 	shutdown = True
-    display.clear()
+	display.clear()
 	server.socket.close()
