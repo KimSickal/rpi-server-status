@@ -41,6 +41,7 @@ def LEDHandler():
 
 	display.clear()
 	display.create_blank_image()
+	display.write_display()
 	return
 	
 
