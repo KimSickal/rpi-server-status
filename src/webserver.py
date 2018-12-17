@@ -9,12 +9,16 @@ from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 
 from Adafruit_LED_Backpack import BicolorMatrix8x8
 
+from matrix import matrix
+
 flag = False
 shutdown = False
 
-display = BicolorMatrix8x8.BicolorMatrix8x8()
-display.begin()
-display.clear()
+screen = matrix()
+
+# display = BicolorMatrix8x8.BicolorMatrix8x8()
+# display.begin()
+# display.clear()
 
 def LEDHandler():
 	while(not shutdown):
@@ -23,25 +27,28 @@ def LEDHandler():
 		display.clear()
 
 		if(flag):
-			image = Image.new('RGB', (8, 8))
-			draw = ImageDraw.Draw(image)
-			draw.line((1, 1, 6, 6), fill=(255, 0, 0))
-			draw.line((1, 6, 6, 1), fill=(100, 0, 0))
-			display.set_image(image)
-			display.write_display()
+			# image = Image.new('RGB', (8, 8))
+			# draw = ImageDraw.Draw(image)
+			# draw.line((1, 1, 6, 6), fill=(255, 0, 0))
+			# draw.line((1, 6, 6, 1), fill=(255, 0, 0))
+			# display.set_image(image)
+			# display.write_display()
+			screen.disableImage()
 
 		elif(not flag):
-			image = Image.new('RGB', (8, 8))
-			draw = ImageDraw.Draw(image)
-			draw.rectangle((0, 0, 7, 7), outline=(0, 255, 0), fill=(0, 255, 0))
-			display.set_image(image)
-			display.write_display()
+			# image = Image.new('RGB', (8, 8))
+			# draw = ImageDraw.Draw(image)
+			# draw.rectangle((0, 0, 7, 7), outline=(0, 255, 0), fill=(0, 255, 0))
+			# display.set_image(image)
+			# display.write_display()
+			screen.playImage('success')
 
-		time.sleep(1)
+		# time.sleep(1)
 
-	display.clear()
-	display.create_blank_image()
-	display.write_display()
+	# display.clear()
+	# display.create_blank_image()
+	# display.write_display()
+	screen.disableImage()
 	return
 	
 
