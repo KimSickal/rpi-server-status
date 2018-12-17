@@ -40,6 +40,7 @@ def LEDHandler():
 		time.sleep(1)
 
 	display.clear()
+	display.create_blank_image()
 	return
 	
 
@@ -71,5 +72,4 @@ except KeyboardInterrupt:
 	print ' shutdown'
 	global shutdown
 	shutdown = True
-	display.clear()
 	server.socket.close()
