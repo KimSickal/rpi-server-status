@@ -52,7 +52,7 @@ class matrix (object):
 			self.display.create_blank_image()
 			self.frameIndex = 0
 		self.display.write_display()
-		time.sleep(1000 / fps)
+		time.sleep(1 / fps)
 
 	def _initImage(self, image, fps, duration):
 		if(duration == 0):
@@ -61,7 +61,7 @@ class matrix (object):
 			self.display.set_image(image)
 		self.frameIndex = 0
 		self.display.write_display()
-		time.sleep(1000 / fps)
+		time.sleep(1 / fps)
 
 	def disableImage(self):
 		self.display.create_blank_image()
