@@ -24,9 +24,9 @@ class httpHandler(BaseHTTPRequestHandler):
 
 		global flag
 
-		if(pathParam == 't'):
+		if(pathParam == 'a'):
 			flag = True
-		elif(pathParam == 'f'):
+		elif(pathParam == 'b'):
 			flag = False
 
 try:
