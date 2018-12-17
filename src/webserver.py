@@ -15,6 +15,7 @@ shutdown = False
 display = BicolorMatrix8x8.BicolorMatrix8x8()
 display.begin()
 display.clear()
+image = Image.new('RGB', (8, 8))
 draw = ImageDraw.Draw(image)
 
 def LEDHandler():
