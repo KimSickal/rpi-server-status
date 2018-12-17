@@ -11,15 +11,25 @@ YEL = (255, 255, 0)
 BLK = (0, 0, 0)
 
 bitmapImage = {
+	# 'success': [
+	# 	[BLK, BLK, GRN, GRN, GRN, GRN, BLK, BLK, ],
+	# 	[BLK, GRN, GRN, GRN, GRN, GRN, GRN, BLK, ],
+	# 	[GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, ],
+	# 	[GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, ],
+	# 	[GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, ],
+	# 	[GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, ],
+	# 	[BLK, GRN, GRN, GRN, GRN, GRN, GRN, BLK, ],
+	# 	[BLK, BLK, GRN, GRN, GRN, GRN, BLK, BLK, ],
+	# ]
 	'success': [
-		[BLK, BLK, GRN, GRN, GRN, GRN, BLK, BLK, ],
-		[BLK, GRN, GRN, GRN, GRN, GRN, GRN, BLK, ],
-		[GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, ],
-		[GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, ],
-		[GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, ],
-		[GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, ],
-		[BLK, GRN, GRN, GRN, GRN, GRN, GRN, BLK, ],
-		[BLK, BLK, GRN, GRN, GRN, GRN, BLK, BLK, ],
+		BLK, BLK, GRN, GRN, GRN, GRN, BLK, BLK,
+		BLK, GRN, GRN, GRN, GRN, GRN, GRN, BLK,
+		GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN,
+		GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN,
+		GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN,
+		GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN,
+		BLK, GRN, GRN, GRN, GRN, GRN, GRN, BLK,
+		BLK, BLK, GRN, GRN, GRN, GRN, BLK, BLK,
 	]
 }
 
