@@ -1,6 +1,12 @@
 import threading
+
 import time
+
+from PIL import Image
+from PIL import ImageDraw
+
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
+
 from Adafruit_LED_Backpack import BicolorMatrix8x8
 
 flag = False
