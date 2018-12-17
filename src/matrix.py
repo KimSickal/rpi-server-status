@@ -61,10 +61,10 @@ class matrix (object):
 
 	def playImage(self, imageName, fps = 1, duration = -1):
 		if(self.currMode == imageName):
-			self._showImage(bitmapImage[imageName], fps, duration)
+			self._showImage(Image.fromarray(bitmapImage[imageName]), fps, duration)
 		else:
 			self.currMode = imageName
-			self._initImage(bitmapImage[imageName], fps, duration)
+			self._initImage(Image.fromarray(bitmapImage[imageName]), fps, duration)
 
 
 
