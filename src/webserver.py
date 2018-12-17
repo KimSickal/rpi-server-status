@@ -9,6 +9,7 @@ shutdown = False
 display = BicolorMatrix8x8.BicolorMatrix8x8()
 display.begin()
 display.clear()
+draw = ImageDraw.Draw(image)
 
 def LEDHandler():
 	while(not shutdown):
@@ -18,7 +19,7 @@ def LEDHandler():
 			draw.line((1, 1, 6, 6), fill=(0, 255, 0))
 			draw.line((1, 6, 6, 1), fill=(0, 255, 0))
 
-		elif(flag):
+		elif(not flag):
 			display.clear()
 			draw.rectangle((0, 0, 7, 7), outline=(255, 0, 0), fill=(255, 255, 0))
 		time.sleep(1)
@@ -51,7 +52,7 @@ try:
 	server.serve_forever()
 
 except KeyboardInterrupt:
-	print 'shutdown'
+	print ' shutdown'
 	global shutdown
 	shutdown = True
 	display.clear()
