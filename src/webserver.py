@@ -20,6 +20,8 @@ draw = ImageDraw.Draw(image)
 
 draw.line((1, 1, 6, 6), fill=(0, 255, 0))
 draw.line((1, 6, 6, 1), fill=(0, 255, 0))
+display.set_image(image)
+display.write_display()
 
 def LEDHandler():
 	while(not shutdown):
