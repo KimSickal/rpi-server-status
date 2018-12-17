@@ -1,15 +1,27 @@
 import threading
 import time
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
-import urlparse
+from Adafruit_LED_Backpack import BicolorMatrix8x8
 
 flag = False
 shutdown = False
 
+display = BicolorMatrix8x8.BicolorMatrix8x8()
+display.begin()
+display.clear()
+
 def LEDHandler():
 	while(not shutdown):
 		print flag
+		if(flag):
+			display.clear()
+			draw.line((1, 1, 6, 6), fill=(0, 255, 0))
+			draw.line((1, 6, 6, 1), fill=(0, 255, 0))
+		else if(flag):
+			display.clear()
+			draw.rectangle((0, 0, 7, 7), outline=(255, 0, 0), fill=(255, 255, 0))
 		time.sleep(1)
+	return
 	
 
 class httpHandler(BaseHTTPRequestHandler):
@@ -20,7 +32,7 @@ class httpHandler(BaseHTTPRequestHandler):
 		self.wfile.write(''+str(flag))
 
 		pathParam = self.path[1]
-		print 'ping' + pathParam
+		print 'ping, path: ' + pathParam
 
 		global flag
 
@@ -38,7 +50,8 @@ try:
 	server.serve_forever()
 
 except KeyboardInterrupt:
-	print '^C'
+	print 'shutdown'
 	global shutdown
 	shutdown = True
+    display.clear()
 	server.socket.close()
