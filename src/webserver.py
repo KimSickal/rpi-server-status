@@ -18,24 +18,22 @@ display.clear()
 image = Image.new('RGB', (8, 8))
 draw = ImageDraw.Draw(image)
 
-draw.line((1, 1, 6, 6), fill=(0, 255, 0))
-draw.line((1, 6, 6, 1), fill=(0, 255, 0))
-display.set_image(image)
-display.write_display()
-
 def LEDHandler():
 	while(not shutdown):
 		print flag
-		draw.line((1, 1, 6, 6), fill=(0, 255, 0))
-		draw.line((1, 6, 6, 1), fill=(0, 255, 0))
-		# display.clear()
 
-		# if(flag):
-		# 	draw.line((1, 1, 6, 6), fill=(0, 255, 0))
-		# 	draw.line((1, 6, 6, 1), fill=(0, 255, 0))
+		display.clear()
 
-		# elif(not flag):
-		# 	draw.rectangle((0, 0, 7, 7), outline=(255, 0, 0), fill=(255, 255, 0))
+		if(flag):
+			draw.line((1, 1, 6, 6), fill=(0, 255, 0))
+			draw.line((1, 6, 6, 1), fill=(0, 255, 0))
+			display.set_image(image)
+			display.write_display()
+
+		elif(not flag):
+			draw.rectangle((0, 0, 7, 7), outline=(255, 0, 0), fill=(255, 255, 0))
+			display.set_image(image)
+			display.write_display()
 
 		time.sleep(1)
 	return
