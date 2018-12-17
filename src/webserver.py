@@ -18,6 +18,9 @@ display.clear()
 image = Image.new('RGB', (8, 8))
 draw = ImageDraw.Draw(image)
 
+draw.line((1, 1, 6, 6), fill=(0, 255, 0))
+draw.line((1, 6, 6, 1), fill=(0, 255, 0))
+
 def LEDHandler():
 	while(not shutdown):
 		print flag
@@ -57,7 +60,6 @@ try:
 	server = HTTPServer(('', 8080), httpHandler)
 	print 'Started httpserver on port 8080'
 	LEDThread = threading.Thread(target=LEDHandler)
-	# LEDThread.daemon = True
 	LEDThread.start()
 	server.serve_forever()
 
