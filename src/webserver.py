@@ -26,7 +26,7 @@ def LEDHandler():
 			image = Image.new('RGB', (8, 8))
 			draw = ImageDraw.Draw(image)
 			draw.line((1, 1, 6, 6), fill=(255, 0, 0))
-			draw.line((1, 6, 6, 1), fill=(255, 0, 0))
+			draw.line((1, 6, 6, 1), fill=(100, 0, 0))
 			display.set_image(image)
 			display.write_display()
 
