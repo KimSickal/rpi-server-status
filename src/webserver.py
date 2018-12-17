@@ -24,7 +24,7 @@ def LEDHandler():
 	while(not shutdown):
 		print flag
 
-		display.clear()
+		# display.clear()
 
 		if(flag):
 			# image = Image.new('RGB', (8, 8))
