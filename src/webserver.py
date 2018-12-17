@@ -15,8 +15,6 @@ shutdown = False
 display = BicolorMatrix8x8.BicolorMatrix8x8()
 display.begin()
 display.clear()
-image = Image.new('RGB', (8, 8))
-draw = ImageDraw.Draw(image)
 
 def LEDHandler():
 	while(not shutdown):
@@ -25,13 +23,17 @@ def LEDHandler():
 		display.clear()
 
 		if(flag):
-			draw.line((1, 1, 6, 6), fill=(0, 255, 0))
-			draw.line((1, 6, 6, 1), fill=(0, 255, 0))
+			image = Image.new('RGB', (8, 8))
+			draw = ImageDraw.Draw(image)
+			draw.line((1, 1, 6, 6), fill=(255, 0, 0))
+			draw.line((1, 6, 6, 1), fill=(255, 0, 0))
 			display.set_image(image)
 			display.write_display()
 
 		elif(not flag):
-			draw.rectangle((0, 0, 7, 7), outline=(255, 0, 0), fill=(255, 255, 0))
+			image = Image.new('RGB', (8, 8))
+			draw = ImageDraw.Draw(image)
+			draw.rectangle((0, 0, 7, 7), outline=(0, 255, 0), fill=(0, 255, 0))
 			display.set_image(image)
 			display.write_display()
 
