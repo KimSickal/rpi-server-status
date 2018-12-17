@@ -41,9 +41,11 @@ class matrix (object):
 		self.display.begin()
 		self.display.clear()
 
-	def _showImage(self, image, fps, duration):
+	def _showImage(self, image, duration):
+		self.display.clear()
 		if(duration < 0):
-			self.display.set_image(image)
+			# self.display.set_image(image)
+			self.display.set_pixel(1,1,BicolorMatrix8x8.RED)
 			self.frameIndex = 0
 		elif(self.frameIndex < duration):
 			self.display.set_image(image)
@@ -52,31 +54,33 @@ class matrix (object):
 			self.display.create_blank_image()
 			self.frameIndex = 0
 		self.display.write_display()
-		time.sleep(1 / fps)
 
-	def _initImage(self, image, fps, duration):
+	def _initImage(self, image, duration):
+		self.display.clear()
 		if(duration == 0):
 			self.display.create_blank_image()
 		else:
 			self.display.set_image(image)
 		self.frameIndex = 0
 		self.display.write_display()
-		time.sleep(1 / fps)
 
 	def disableImage(self):
+		self.display.clear()
 		self.display.create_blank_image()
 		self.display.write_display()
 		self.currMode = ''
 		self.frameIndex = 0
+		time.sleep(1)
 
 	def playImage(self, imageName, fps = 1, duration = -1):
 		image = Image.new('RGB', (8, 8))
 		image.putdata(bitmapImage[imageName])
 		if(self.currMode == imageName):
-			self._showImage(image, fps, duration)
+			self._showImage(image, duration)
 		else:
 			self.currMode = imageName
-			self._initImage(image, fps, duration)
+			self._initImage(image, duration)
+		time.sleep(1 / fps)
 
 
 
