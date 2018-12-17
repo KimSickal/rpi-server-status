@@ -36,6 +36,8 @@ def LEDHandler():
 			display.write_display()
 
 		time.sleep(1)
+
+	display.clear()
 	return
 	
 
