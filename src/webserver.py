@@ -14,13 +14,13 @@ def LEDHandler():
 
 class httpHandler(BaseHTTPRequestHandler):
 	def do_GET(self):
-		print 'ping' + str(self.path)
 		self.send_response(200)
 		self.send_header('Content-type', 'text/html')
 		self.end_headers()
 		self.wfile.write(''+str(flag))
 
 		pathParam = self.path[1]
+		print 'ping' + pathParam
 
 		global flag
 
